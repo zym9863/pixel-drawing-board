@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>像素绘画板</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="app-title">像素绘画板</h1>
+
+        <!-- Color Palette -->
+        <div class="color-palette">
+            <div class="color-preset" style="background-color: #000000;" data-color="#000000"></div>
+            <div class="color-preset" style="background-color: var(--pixel-red);" data-color="var(--pixel-red)"></div>
+            <div class="color-preset" style="background-color: var(--pixel-orange);" data-color="var(--pixel-orange)"></div>
+            <div class="color-preset" style="background-color: var(--pixel-yellow);" data-color="var(--pixel-yellow)"></div>
+            <div class="color-preset" style="background-color: var(--pixel-green);" data-color="var(--pixel-green)"></div>
+            <div class="color-preset" style="background-color: var(--pixel-cyan);" data-color="var(--pixel-cyan)"></div>
+            <div class="color-preset" style="background-color: var(--pixel-blue);" data-color="var(--pixel-blue)"></div>
+            <div class="color-preset" style="background-color: var(--pixel-purple);" data-color="var(--pixel-purple)"></div>
+            <div class="color-preset" style="background-color: var(--pixel-pink);" data-color="var(--pixel-pink)"></div>
+            <div class="color-preset" style="background-color: #FFFFFF;" data-color="#FFFFFF"></div>
+        </div>
+
+        <!-- Tools -->
+        <div class="tools">
+            <div class="colorPicker-wrapper" data-tooltip="选择颜色">
+                <input type="color" id="colorPicker" value="#000000">
+            </div>
+            <button class="tool-btn" id="pencil" data-tooltip="铅笔">
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+            <button class="tool-btn" id="eraser" data-tooltip="橡皮擦">
+                <i class="fas fa-eraser"></i>
+            </button>
+            <button class="tool-btn" id="fill" data-tooltip="填充">
+                <i class="fas fa-fill-drip"></i>
+            </button>
+            <button class="tool-btn" id="clear" data-tooltip="清除画布">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+
+        <!-- Canvas Grid -->
+        <div class="grid" id="pixelCanvas"></div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="current-color-display">
+                <div class="color-preview" id="currentColorPreview"></div>
+                <span id="currentColorCode">#000000</span>
+            </div>
+            <div class="grid-size">16 x 16</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
